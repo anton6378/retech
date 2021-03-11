@@ -1,0 +1,22 @@
+<div class="item-image" [ngStyle]="{'background-image': 'url(\'/assets/images/items/'+item.image+'\''}"></div>
+<div class="item-body">
+
+  <div class="item-body-left">
+    <div class="item-name">{{item.name}}</div>
+    <div class="item-description">{{item.description}}</div>
+  </div>
+  <div class="item-body-right">
+    <div class="item-quantity">
+      <div class="item-quantity-minus" (click)="minus()">-</div>
+      <div class="item-quantity-value">{{item.quantity}}</div>
+      <div class="item-quantity-plus" (click)="plus()">+</div>
+    </div>
+
+    <div class="price">{{item.price}}  &#8381;</div>
+  </div>
+
+
+</div>
+<div class="item-footer">
+  Остаток на складе: {{item.inStock}} шт.
+</div>

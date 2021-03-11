@@ -1,0 +1,42 @@
+<nav class="navbar navbar-dark bg-white shadow-sm">
+  <a class="navbar-brand mx-auto" href="#">
+    <img src="/assets/images/logo.png" height="64" alt="">
+  </a>
+</nav>
+
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-12 instructions mt-4">
+      Для добавления товара,<br>удерживайте его мышкой и перенесите в корзину
+      <img src="/assets/images/instructions.png" alt="" class="mt-4 mb-2 d-block mx-auto">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 d-flex">
+      <div class="column goods ml-auto mr-4">
+        <div class="column-header">Товары</div>
+        <div class="column-body">
+
+          <item *ngFor="let item of store" [item]="item" [dndDraggable]="item.id" (onRemove)="remove($event)"></item>
+
+        </div>
+      </div>
+      <div class="column cart mr-auto ml-4">
+        <div class="column-header">Корзина</div>
+        <div class="column-body empty" dndDropzone (dndDrop)="drop($event)">
+          <item *ngFor="let item of cart" [item]="item" (onRemove)="remove($event)"></item>
+        </div>
+
+        <div class="column-footer" *ngIf="total">
+
+          <h4 class="w-75">Итого:</h4>
+          <div class="price w-25">{{total}} &#8381;</div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

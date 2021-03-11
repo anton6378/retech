@@ -1,0 +1,64 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+body {
+  background-color: #f8f8f8;
+}
+
+h4 {
+  margin-bottom: 0;
+}
+
+.instructions {
+  min-width: 903px;
+  text-align: center;
+  color: #007dc0;
+}
+
+.column {
+  background-color: #e2e2e2;
+  width: 420px;
+
+  height: calc(100vh - 400px);
+
+  display: flex;
+  flex-direction: column;
+
+  .column-header {
+    background-color: #007dc0;
+    color: white;
+    padding: 8px 16px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .column-body {
+    min-width: 420px;
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .column-footer {
+    display: flex;
+    align-items: center;
+  }
+
+}
+
+.cart {
+
+  &.empty {
+    background-image: url("/assets/images/cart-empty.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+}
+
+.price {
+  color: #40aa00;
+  font-size: 1.5rem;
+}
+
